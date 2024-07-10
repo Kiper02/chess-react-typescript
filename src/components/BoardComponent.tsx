@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Board } from '../models/Board';
 import CellComponent from './CellComponent';
 import { Cell } from '../models/Cell';
@@ -12,9 +12,26 @@ const BoardComponent: React.FC<BoardProps> = ({ board, setBoard }) => {
     const [selectedCell, setSelectedCell] = useState<Cell | null>(null);
 
     function click(cell: Cell) {
-        if(cell.figure) {
-            setSelectedCell(cell);
+        if(selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
+            selectedCell.moveFigure(cell)
+            setSelectedCell(null)
+        } else {
+            setSelectedCell(cell)
         }
+    }
+
+    useEffect(() => {
+        highLightCells()
+    }, [selectedCell])
+
+    function highLightCells() {
+        board.highLightCells(selectedCell)
+        updateBoard()
+    }
+
+    function updateBoard() {
+        const newBoard = board.getCopyBoard()
+        setBoard(newBoard)
     }
 
     return (
