@@ -65,7 +65,7 @@ export class Board {
         new Rook(Colors.BLACK, this.getCell(0, 7))
         new Rook(Colors.WHITE, this.getCell(7, 7))
     }
-
+    
 
     public addFigures() {
         this.AddPawns();
