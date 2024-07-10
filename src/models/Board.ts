@@ -65,22 +65,22 @@ export class Board {
 
     private AddBishops() {
         new Bishop(Colors.BLACK, this.getCell(2, 0))
-        new Bishop(Colors.WHITE, this.getCell(5, 0))
-        new Bishop(Colors.BLACK, this.getCell(2, 7))
+        new Bishop(Colors.BLACK, this.getCell(5, 0))
+        new Bishop(Colors.WHITE, this.getCell(2, 7))
         new Bishop(Colors.WHITE, this.getCell(5, 7))
     }
 
     private AddKnights() {
         new Knight(Colors.BLACK, this.getCell(1, 0))
-        new Knight(Colors.WHITE, this.getCell(6, 0))
-        new Knight(Colors.BLACK, this.getCell(1, 7))
+        new Knight(Colors.BLACK, this.getCell(6, 0))
+        new Knight(Colors.WHITE, this.getCell(1, 7))
         new Knight(Colors.WHITE, this.getCell(6, 7))
     }
 
     private AddRooks() {
         new Rook(Colors.BLACK, this.getCell(0, 0))
-        new Rook(Colors.WHITE, this.getCell(7, 0))
-        new Rook(Colors.BLACK, this.getCell(0, 7))
+        new Rook(Colors.BLACK, this.getCell(7, 0))
+        new Rook(Colors.WHITE, this.getCell(0, 7))
         new Rook(Colors.WHITE, this.getCell(7, 7))
     }
 
